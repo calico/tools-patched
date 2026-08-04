@@ -1,0 +1,18 @@
+# Runtime dependencies for napari-in-subprocess.
+#
+# This wrapper works across a wide range of napari versions (tested on 0.4.19
+# and 0.8.0). The CRITICAL requirement is a **Qt6** binding (PySide6 or PyQt6):
+# the old Qt5 bindings (PyQt5 / PySide2) trigger a corrupt/triangular or black
+# canvas on recent NVIDIA drivers. See README.md ("The bug and the fix").
+#
+# NOTE: On an existing, working microscope environment you usually only need to
+# add a Qt6 binding (`pip install PySide6`) rather than installing everything
+# here, to avoid upgrading napari/numpy unintentionally.
+
+numpy>=1.24
+napari>=0.4.19
+
+# Qt6 binding -- REQUIRED. PySide6 is the binding this package selects first.
+PySide6>=6.5
+# Alternatively (either one works):
+# PyQt6>=6.5
